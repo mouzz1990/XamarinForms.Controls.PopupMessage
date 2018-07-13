@@ -2,13 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PopupMessage"
+             xmlns:controls="clr-namespace:PopupMessage.Controls"
              x:Class="PopupMessage.MainPage">
+    <ContentPage.Content>
+        <Grid>
+            <Button x:Name="btnShowPopup" Text="Show Popup" VerticalOptions="End" HorizontalOptions="Center"
+                    Clicked="btnShowPopup_Clicked"/>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <controls:PopupMessage 
+                x:Name="popMenu" 
+                Image="drink.png"
+                ButtonText="✔" ImagePosition="Right">
+                <controls:PopupMessage.PopupContent>
+                    <Grid BackgroundColor="White">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label 
+                                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla velit at massa condimentum."
+                                FontSize="Medium"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                Margin="20"
+                                />
+                            <Button x:Name="btnChangeImageAnchor" Text="Anchor" Clicked="btnChangeImageAnchor_Clicked" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </Grid>
+                </controls:PopupMessage.PopupContent>
+            </controls:PopupMessage>
+        </Grid>
+    </ContentPage.Content>
 
 </ContentPage>

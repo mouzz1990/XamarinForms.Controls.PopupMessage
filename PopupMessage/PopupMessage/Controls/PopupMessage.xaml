@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PopupMessage.Controls"
+             x:Class="PopupMessage.Controls.PopupMessage">
+  <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!--Shadow Background-->
+            <BoxView Grid.RowSpan="3" BackgroundColor="Black" Opacity="0.3"/>
+
+            <!--Main content-->
+            <Frame Grid.Row="1" x:Name="mainContent" CornerRadius="10" BackgroundColor="White" 
+                   Padding="0" Margin="20,0">
+
+            </Frame>
+
+            <controls:RoundedButton 
+                x:Name="btnHide"
+                Grid.Row="1"
+                FontSize="24" TextColor="White"
+                Text="✔" 
+                VerticalOptions="End" HorizontalOptions="Center" 
+                Clicked="btnHide_Clicked"
+                BackgroundColor="#68D1FE"
+                WidthRequest="60" HeightRequest="60" CornerRadius="30"
+                TranslationY="30"
+                />
+
+            <controls:FrameShadow 
+                x:Name="imgFrame"
+                BackgroundColor="Transparent" 
+                Grid.Row="1" Padding="0" HasShadow="False" Elevation="20"
+                VerticalOptions="Start" HorizontalOptions="Start"
+                Margin="35, -35, 0, 0"
+                >
+                <Image x:Name="img" 
+                   HeightRequest="70"
+                />
+            </controls:FrameShadow>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
